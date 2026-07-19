@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Question 😜</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe5ec, #ffc2d1);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff477e;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            height: 50px;
+            position: relative;
+        }
+
+        button {
+            padding: 12px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #2a9d8f;
+            color: white;
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #e76f51;
+            color: white;
+            position: absolute;
+            /* Initial position relative to container */
+            left: 55%; 
+        }
+
+        .result {
+            display: none;
+            font-size: 1.8rem;
+            color: #7209b7;
+            font-weight: bold;
+            animation: pop 0.5s ease-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="quizCard">
+        <div id="questionArea">
+            <h1>Are you mad? 🤔🤪</h1>
+            <div class="btn-container">
+                <button id="yesBtn" onclick="showResult()">Yes 🤓</button>
+                <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No 😭</button>
+            </div>
+        </div>
+        
+        <div id="resultArea" class="result">
+            <p>I knew it! 😂</p>
+            <p>💥 I AM MAD 🤪💥</p>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            
+            // Screen ki width aur height ke mutabik random positions calculate karna
+            // -100 isliye taaki button screen se bilkul bahar na nikal jaye
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 80);
+            
+            // Button ki position ko absolute karke screen par randomly bhej dena
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function showResult() {
+            // Question area ko chupana aur result area ko dikhana
+            document.getElementById('questionArea').style.display = 'none';
+            document.getElementById('resultArea').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
