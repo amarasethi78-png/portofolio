@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amar's Developer Space</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #eef2f3;
+    color: #333;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+nav {
+    background: #34495e;
+    text-align: center;
+    padding: 12px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1abc9c;
+}
+
+section {
+    background: white;
+    width: 85%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin: 15px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #2c3e50;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button {
+    background: #1abc9c;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px 10px 10px 0;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #16a085;
+}
+
+#date-display {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+    background: #e8f8f5;
+    border-left: 4px solid #1abc9c;
+    display: none;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My Tech Portfolio</h1>
+    <p>Exploring Web Development & Coding</p>
+</header>
+
+<nav>
+    <a href="#about-me">About</a>
+    <a href="#my-skills">Skills</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#resources">Resources</a>
+</nav>
+
+<section id="about-me">
+    <h2>About Me</h2>
+    <p>
+        Hi there! My name is **Amar Sethi**. I am currently pursuing my MCA degree and diving deep into the worlds of HTML, CSS, and JavaScript. I built this responsive webpage as part of my practical internship assignment to showcase my foundational front-end skills and development goals.
+    </p>
+
+    <h3>Interests & Hobbies</h3>
+    <ul>
+        <li>Writing Clean Code</li>
+        <li>Playing Competitive Badminton</li>
+        <li>Following Tech Trends & Innovations</li>
+        <li>Reading Fiction and Tech Blogs</li>
+    </ul>
+</section>
+
+<section id="my-skills">
+    <h2>Technical Skills</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Technology</th>
+                <th>Proficiency Level</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML5</td>
+                <td>Beginner / Intermediate</td>
+            </tr>
+            <tr>
+                <td>CSS3</td>
+                <td>Beginner / Intermediate</td>
+            </tr>
+            <tr>
+                <td>JavaScript (ES6)</td>
+                <td>Actively Learning</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>Foundational Knowledge</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="showcase">
+    <h2>Visual Gallery</h2>
+    <img src="https://picsum.photos/400/250" alt="Serene Nature Landscape">
+    <p>
+        <em>A sample placeholder image integrated via the standard HTML image element to demonstrate media layout capabilities.</em>
+    </p>
+</section>
+
+<section id="resources">
+    <h2>Quick References</h2>
+    <p>
+        Use <a href="https://www.google.com" target="_blank">Google Search</a> to look up technical documentation.
+    </p>
+    <p>
+        Check out <a href="https://github.com" target="_blank">GitHub</a> to view my open-source code repositories.
+    </p>
+
+    <h2>Interactive Elements</h2>
+    <button onclick="greetUser()">
+        Trigger Greeting
+    </button>
+    <button onclick="toggleTimestamp()">
+        Toggle Date & Time
+    </button>
+    <p id="date-display"></p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Amar Sethi | Internship Capstone Project</p>
+</footer>
+
+<script>
+function greetUser() {
+    alert("Hello! Thank you for checking out my project page.");
+}
+
+function toggleTimestamp() {
+    const dateElement = document.getElementById("date-display");
+    
+    if (dateElement.style.display === "block") {
+        dateElement.style.display = "none";
+    } else {
+        dateElement.innerHTML = "Generated on: " + new Date().toLocaleString();
+        dateElement.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
